@@ -1,17 +1,19 @@
 import React, {useState} from 'react';
 
-
 import { toast } from 'react-toastify';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import 'react-toastify/dist/ReactToastify.css';
 
+import BuyPage from './Components/BuyPage';
+
 import './App.css';
+
 function App() {
   const [cartItem, setCartItem] = useState([]);
 
   const addInCart = item => {
     
-    const isAlreadyAdded = cartItem.findIndex( function(array){
+    const isAlreadyAdded = cartItem.findIndex( function(array) {
           return array.id === item.id;
     });
     if(isAlreadyAdded !== -1) {
@@ -21,22 +23,19 @@ function App() {
     }
     setCartItem([...cartItem, item]);
 };
-
   const buyNow = () => {
     setCartItem([]);
     toast("Purchased Successfully", {type: "success"}); 
+}; 
+  const removeItem = item => {
+    setCartItem(cartItem.filter( (signleItem)=> signleItem.id !== item.id ));
 };
-
- const removeItem = item => {
-   setCartItem(cartItem.filter( (signleItem)=> signleItem.id !== item.id ));
-};
-
   return (
     <div className="App">
       <header className="App-header">
        
-         Ecommerce
-        
+         Ecommerce Functionality(add)
+           <BuyPage/>
       </header>
     </div>
   );
