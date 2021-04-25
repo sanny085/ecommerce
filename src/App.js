@@ -35,7 +35,7 @@ function App() {
       <header className="App-header">
        
          Ecommerce Functionality(add)
-           <BuyPage/>
+           <BuyPage addInCart={addInCart} />
       </header>
     </div>
   );
