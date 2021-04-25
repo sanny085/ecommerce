@@ -28,7 +28,7 @@ function App() {
     toast("Purchased Successfully", {type: "success"}); 
 }; 
   const removeItem = item => {
-    setCartItem(cartItem.filter( (signleItem)=> signleItem.id !== item.id ));
+    setCartItem(cartItem.filter( signleItem => signleItem.id !== item.id ));
 };
   return (
     <div className="App">
