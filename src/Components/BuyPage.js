@@ -6,7 +6,6 @@ import { Container, Col, Row } from "reactstrap";
 
 import CartItem from "./CartItem";
 
-
 const apiKey = "INSET_YOUR_KEY_HERE";
 const url = "https://api.pexels.com/v1/search?query=laptop&per_page=6&page=1";
 
@@ -28,7 +27,7 @@ const BuyPage = ({ addInCart }) => {
     console.log(response);
     // Destructuring from object
      const {photos} = response.data;
- 
+   
      const allProduct = photos.map( photo => ({
        smallImage: photo.src.medium,
        tinyImage: photo.src.tiny,
@@ -36,7 +35,7 @@ const BuyPage = ({ addInCart }) => {
        productPrice: commerce.price(),
        id: datatype.uuid()
      }));
-
+   
      setProduct(allProduct);
      
     }
@@ -51,17 +50,15 @@ const BuyPage = ({ addInCart }) => {
 
   return (
     <Container>
-     <h1 className="text-center text-success">BuyPage list</h1>
+     <h1 className="text-center text-success">BuyPage List</h1>
        <Row> 
         { 
           product.map( product1 => (
            <Col sm="6" md="4" lg="3" className="p-1" key={product1.id}>
             <CartItem  addInCart={addInCart} product1={product1}/>
            </Col>
-            ))
-            
-          }
-            
+            )) 
+        }
       </Row>
     </Container>
   )

@@ -34,11 +34,13 @@ function App() {
     <div className="App">
       <header className="App-header">
        
-         Ecommerce Functionality(add)
+         Ecommerce Functionality(Add)
            <BuyPage addInCart={addInCart} />
+          
       </header>
     </div>
   );
 }
 
 export default App;
+
