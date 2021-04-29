@@ -5,9 +5,10 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import 'react-toastify/dist/ReactToastify.css';
 
 import BuyPage from './Components/BuyPage';
-
 import { Container, Col, Row } from "reactstrap";
+
 import './App.css';
+import Cart from './Components/Cart';
 
 function App() {
   const [cartItem, setCartItem] = useState([]);
@@ -36,9 +37,12 @@ function App() {
       <header className="App-header">
         <Container fluid>
           <Row>
-            <Col md="">
+            <Col md="8">
                Ecommerce Functionality(Add)
                <BuyPage addInCart={addInCart} />
+            </Col>
+            <Col md="4">
+               <Cart cartItem={cartItem} removeItem={removeItem} />
             </Col>
           </Row>
         </Container>
