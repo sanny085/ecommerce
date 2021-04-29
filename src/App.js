@@ -6,6 +6,7 @@ import 'react-toastify/dist/ReactToastify.css';
 
 import BuyPage from './Components/BuyPage';
 
+import { Container, Col, Row } from "reactstrap";
 import './App.css';
 
 function App() {
@@ -33,10 +34,14 @@ function App() {
   return (
     <div className="App">
       <header className="App-header">
-       
-         Ecommerce Functionality(Add)
-           <BuyPage addInCart={addInCart} />
-          
+        <Container fluid>
+          <Row>
+            <Col md="">
+               Ecommerce Functionality(Add)
+               <BuyPage addInCart={addInCart} />
+            </Col>
+          </Row>
+        </Container>
       </header>
     </div>
   );
