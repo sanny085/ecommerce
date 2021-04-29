@@ -1,39 +1,23 @@
 import React from 'react'
 
-import { Container, ListGroup, ListGroupItem, Button, CardHeader, CardBody, Card, CardFooter, Col, Row } from "reactstrap";
+import {
+    Card, CardImg, CardText, CardBody,
+    CardTitle, Button
+  } from 'reactstrap';
 
-const Cart = ({cartItem, removeItem, buyNow }) => {
-    let amount = 0;
-    
-    cartItem.forEach( item => {
-        amount = parseFloat(amount) +parseFloat(item.productPrice);
-    } )
-
+const CartItem = ({product1, addInCart}) => {
     return (
-        <Container fluid>
-          <h1 className="text-success">Your Cart</h1>
-          <ListGroup>
-          {cartItem.map( item => (
-             <ListGroupItem key={item.id}>
-              <Row>
-                  <Col>
-                      <img src={item.tinyImage} height="60"/>
-                  </Col>
-                  <Col className="text-center">
-                       <div className="text-primary">
-                            {item.productName}
-                       </div>
-                    <span>Price : - {item.productPrice}</span>
-                    <Button color="danger" onClick={ ()=>{removeItem(item)} }>Remove</Button>
-                  </Col>
-              </Row>
-             </ListGroupItem>
-          ))}
-          </ListGroup>
-          
+        <div>
+            <Card>
+              <CardImg top height="130"  width="100%" src={product1.smallImage} alt={product1.productName} />
+              <CardBody className="text-center">
+                <CardTitle className="text-dark">{ product1.productName }</CardTitle>
         
-        </Container>
+                <CardText className="text-secondary">Price: RS { product1.productPrice}</CardText>
+                <Button color="success" onClick={()=>{addInCart(product1)}}>Buy Now</Button>
+              </CardBody>
+            </Card>
+        </div>
     )
 }
-
-export default Cart
+export default CartItem;
