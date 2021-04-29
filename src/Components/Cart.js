@@ -36,4 +36,4 @@ const Cart = ({cartItem, removeItem, buyNow }) => {
     )
 }
 
-export default Cart
+export default Cart;
