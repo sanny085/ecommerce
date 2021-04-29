@@ -3,6 +3,7 @@ import Axios  from "axios";
 
 import { random, commerce, datatype } from "faker";
 import { Container, Col, Row } from "reactstrap";
+
 import CartItem from "./CartItem";
 
 const apiKey = "INSET_YOUR_KEY_HERE";
@@ -12,12 +13,14 @@ const localurl = "https://api.npoint.io/ba9493f750096240eb35";
 
 const BuyPage = ({ addInCart }) => {
   const [product, setProduct] = useState([]);
+
     // const fetchPhotos = async () => {
     //   const response = await Axios.get(url, {
     //     header: {
     //       Authorization: apiKey
     //     }
     //   });
+
   const fetchPhotos = async () => {
     try{
      const response = await Axios.get(localurl);
@@ -33,12 +36,14 @@ const BuyPage = ({ addInCart }) => {
        id: datatype.uuid()
      }));
    
-     setProduct(allProduct); 
+     setProduct(allProduct);
+     
     }
     catch(err){
         console.log("Catch:"+err)
     }
 };
+
   useEffect( () => {
     fetchPhotos();
   }, []);
@@ -56,8 +61,7 @@ const BuyPage = ({ addInCart }) => {
         }
       </Row>
     </Container>
-  )
+  )  
 };
 
 export default BuyPage;
-
