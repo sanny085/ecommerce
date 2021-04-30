@@ -34,7 +34,7 @@ const BuyPage = ({ addInCart }) => {
        productName: random.word(),
        productPrice: commerce.price(),
        id: datatype.uuid()
-     }));
+     }) );
    
      setProduct(allProduct);
      
@@ -65,3 +65,4 @@ const BuyPage = ({ addInCart }) => {
 };
 
 export default BuyPage;
+
