@@ -33,11 +33,11 @@ const BuyPage = ({ addInCart }) => {
        tinyImage: photo.src.tiny,
        productName: random.word(),
        productPrice: commerce.price(),
-       id: datatype.uuid()
+       id: datatype.uuid(),
+       quantity: 1
      }) );
    
-     setProduct(allProduct);
-     
+      setProduct(allProduct); 
     }
     catch(err){
         console.log("Catch:"+err)
@@ -55,9 +55,9 @@ const BuyPage = ({ addInCart }) => {
         { 
           product.map( product1 => (
            <Col sm="6" md="6" lg="4" className="p-1" key={product1.id}>
-            <CartItem  addInCart={addInCart} product1={product1}/>
+             <CartItem addInCart={addInCart} product1={product1}/>
            </Col>
-            )) 
+           ) ) 
         }
       </Row>
     </Container>
