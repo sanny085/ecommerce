@@ -5,10 +5,6 @@ import { random, commerce, datatype } from "faker";
 import { Container, Col, Row } from "reactstrap";
 
 import CartItem from "./CartItem";
-
-const apiKey = "INSET_YOUR_KEY_HERE";
-const url = "https://api.pexels.com/v1/search?query=laptop&per_page=6&page=1";
-
 const localurl = "https://api.npoint.io/ba9493f750096240eb35";
 
 const BuyPage = ({ addInCart }) => {
