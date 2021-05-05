@@ -61,7 +61,8 @@ return (
                   </Col>
               </Row>
              </ListGroupItem>
-          ))}
+          ))
+         }
           </ListGroup>
     </Container>
   )
