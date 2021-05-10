@@ -16,7 +16,7 @@ const BuyPage = ({ addInCart }) => {
  
   const fetchPhotos = async () => {
     try{
-     const response = await Axios.get(localurl);
+    const response = await Axios.get(localurl);
     console.log(response);
     // Destructuring from object
     const {photos} = response.data;
@@ -29,7 +29,6 @@ const BuyPage = ({ addInCart }) => {
        id: datatype.uuid(),
        quantity: 1
      }) );
-   
      setProduct(allProduct); 
     }
     catch(err){
