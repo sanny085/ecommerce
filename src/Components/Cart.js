@@ -7,7 +7,7 @@ const Cart = ({ cartItem, removeItem, buyNow }) => {
     
     let amount = 0; 
     let totalamount = 0; 
-    
+ 
     cartItem.map( item => {
         amount = parseFloat(amount) + parseFloat(item.productPrice);
         totalamount = parseFloat(amount) * parseFloat(limit);
@@ -33,8 +33,7 @@ return (
                 <Card>
                     <CardBody>
                     <h5 className="text-warning">Cart is empty</h5> 
-                    </CardBody>
-                    
+                    </CardBody>     
                 </Card>
           )
         }
